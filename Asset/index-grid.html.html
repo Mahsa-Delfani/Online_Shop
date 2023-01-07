@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<bod>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 100%;
+        }
+        .row{
+           display: flex;
+           flex-wrap: wrap;
+        }
+        .nessa>.row{
+        height: inherit;
+        }
+        .nessa{
+            width: 100%;
+            height: 120vh;
+            /* background-color: blueviolet; */
+        }
+        .nessa>.row>section{
+            height: inherit;
+            width: 50%;
+            /* border: 3px solid rgb(216, 220, 36); */
+       
+            
+        }
+        .nessa>.row>section>figure{
+            width: 50%;
+            height: 100%;
+        }
+        .nessa>.row>section>figure>img{
+            width: 100%;
+            height: 100%;
+       
+        }
+
+        .nessa>.row>section:nth-of-type(1)>figure{
+            height: auto;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+        
+            
+            
+        }
+        .nessa>.row>section:nth-of-type(2){
+            position: relative;
+        }
+        .nessa>.row>section:nth-of-type(2)>figure{
+            position: absolute;
+          
+        }
+        
+        .nessa>.row>section:nth-of-type(2)>figure>img{
+            width: 100%;
+        }
+        .nessa>.row>section:nth-of-type(2)>figure:nth-of-type(1){
+            width: 30%;
+            left: 20%;
+            right: 20%;
+            height: 35%;
+        
+
+        }
+        .nessa>.row>section:nth-of-type(2)>figure:nth-of-type(2){
+            width: 30%;
+            height: 35%;
+            top: 190px;
+            right: 30%;
+
+        }
+        .nessa>.row>section:nth-of-type(2)>figure:nth-of-type(3){
+            width: 30%;
+            top: 430px;
+            left: 20%;
+            height: 35%;
+
+        }
+        .nessa>.row>section:nth-of-type(3){
+            background-color:rgba(255, 255, 255, 0.036);
+            width: 500px;
+            height: 80px;
+            position: absolute;
+            top: calc(50% - 50px);
+            left: calc(50% - 170px);
+        }
+        .nessa>.row>section:nth-of-type(3)>h3{
+            color:black;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .name{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             /* border: 2px solid blueviolet;  */
+             margin-bottom: 150px;
+        }
+        .name>div{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 20px;
+            
+        }
+        .name>div>h1{
+            width: 100%;
+            text-align: center;
+            position: relative;
+        top: 0;
+        bottom: 0;
+        
+        }
+        .name>div>h1::after{
+            content: '';
+            display: flex;
+            width: 4px;
+            height: 90px;
+            background-color: rgb(1, 10, 13);
+            position: absolute;
+            top: 15px;
+            left: 0;
+
+        }
+        .name>div>h1:nth-last-of-type(2)>a::after{
+            display: none;
+        }
+     
+       .grid{
+        width: 100%;
+        height: 300vh;
+        background-color: 1px solid darkgoldenrod;
+        display: grid;
+        grid-template-columns:repeat(3 ,1fr);
+        grid-template-rows:repeat(6, 1fr);
+        gap: 50px;
+       } 
+       .grid>div{
+            /* border: 1px solid purple; */
+         
+        }
+        .grid>div>img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+       .grid>div>img:hover{
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .grid>div>img:hover{
+      width: 100%;
+      height: auto;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+    .grid>div>img:hover{
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+    }  
+       .grid>div:nth-of-type(1){
+        grid-column-start: 1;
+       grid-column-end: span 1;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+       }
+       .grid>div:nth-of-type(2){
+       grid-column-start: 2;
+       grid-column-end: span 1;
+        grid-row-start: 1;
+        grid-row-end: span  2;
+       }
+       .grid>div:nth-of-type(3){
+        grid-column-start: 3;
+        grid-column-end: span 1 ;
+        grid-row-start: 1;
+        grid-row-end: span 2 ;
+       }
+       .grid>div:nth-of-type(4){
+        grid-column-start: 1;
+        grid-column-end: span 1 ;
+        grid-row-start: 3;
+        grid-row-end: span 2;
+       }
+       .grid>div:nth-of-type(5){
+        grid-column-start: 2;
+        grid-column-end: span 1 ;
+        grid-row-start: 3;
+        grid-row-end: span 1;
+       }  
+       .grid>div:nth-of-type(6){
+        grid-column-start: 2;
+        grid-column-end: span 1 ;
+        grid-row-start: 4;
+        grid-row-end: span 1;
+       } 
+       .grid>div:nth-of-type(7){
+        grid-column-start: 3;
+        grid-column-end: span 1;
+        grid-row-start: 3;
+        grid-row-end: span 2;
+       }   
+       .grid>div:nth-of-type(8){
+        grid-column-start: 1;
+        grid-column-end: span 1;
+        grid-row-start: 5;
+        grid-row-end: span 2;
+       } 
+       .grid>div:nth-of-type(9){
+        grid-column-start: 2;
+        grid-column-end: span 1;
+        grid-row-start: 5;
+        grid-row-end: span 1;
+       } 
+       .grid>div:nth-of-type(10){
+        grid-column-start: 2;
+        grid-column-end: span 1;
+        grid-row-start: 6;
+        grid-row-end: span 1;
+       } 
+
+       .grid>div:nth-of-type(11){
+        grid-column-start: 3;
+        grid-column-end: span 1;
+        grid-row-start: 5;
+        grid-row-end: span 2;
+       } 
+       /* submit */
+   .mit{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   } 
+
+.mit>a{
+  height: 40px;
+  width: 300px;
+  border: 1PX solid black;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+}
+
+/* footer */
+
+* {
+  font-family: Roboto;
+}
+
+.footer-distributed{
+	background: white;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+	padding: 50px 60px 40px;
+	overflow: hidden;
+}
+
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #181717;
+	font: normal 36px 'Roboto', cursive;
+	margin: 0 0 10px;
+}
+
+
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #0a0a0a;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #080808;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #131212;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #d4d5d8;
+	box-shadow: 0 1px 0 0 rgba(20, 19, 19, 0.933);
+	border: none;
+	resize: none;
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #15c4c4;
+	width: 400px;
+	padding: 18px;
+}
+
+
+
+.footer-distributed form button{
+	border-radius: 3px;
+	background-color:  #e0e2e3;
+	color: #070707;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}
+
+    </style>
+</bod>
+
+<section ><section class="nessa">
+  <div class="row">
+  <section>
+    <figure>
+        <img src="../Asset/js/img/152.jpg" alt="">
+    </figure>
+</section>
+<section>
+    <figure>
+        <img src="../Asset/js/img/12.jpg" alt="">
+    </figure>
+    <figure>
+        <img src="../Asset/js/img/14.jpg" alt="">
+    </figure>
+    <figure>
+        <img src="../Asset/js/img/13.jpg" alt="">
+    </figure>
+</section>
+<section>
+  <h4>CAMPAGNE</h4>
+  <h3>
+      Maison Sabben 2019
+  </h3>
+</section>
+</div>
+</section>
+    <section class="name">
+        <div><h1>INFOS</h1></div>
+        <div><h1>ACTUALITES</h1></div>
+        <div><h1>SUIVEZ-MOI SUR</h1></div>
+    </section>
+      
+   <div class="grid">
+    <div>
+      <img src="../Asset/js/img/24.jpg" alt="">
+    
+    </div>
+    <div>
+        <img src="../Asset/js/img/20.jpg" alt="">  
+    </div>
+    <div>
+       <img src="../Asset/js/img/22.jpg" alt=""> 
+    </div>
+    <div>
+       <img src="../Asset/js/img/19.jpg" alt=""> 
+    </div>
+    <div>
+      <img src="../Asset/js/img/21.jpg" alt=""> 
+    </div>
+    <div>
+      <img src="../Asset/js/img/190.png" alt=""> 
+    </div>
+    <div>
+      <img src="../Asset/js/img/18.jpg" alt=""> 
+    </div>
+    <div>
+       <img src="../Asset/js/img/17.jpg" alt=""> 
+    </div>
+    <div>
+       <img src="../Asset/js/img/23.jpg" alt="">
+    </div>
+    <div>
+      <!-- <img src="../COURSE FRONT/16.jpg" alt="">  -->
+    </div>
+    <div>  <img src="../Asset/js/img/16.jpg" alt="">
+    </div>
+   </div>
+<div class="mit">
+    <a href="#">DECOUVRIR LES PORJETS</a>
+</div>
+   
+
+   
+   <footer class="footer-distributed">
+   
+               <div class="footer-left">
+   
+                   <h3>nessa.buonomo</h3>
+   
+                   <p class="footer-links">
+                       <a href="#">Home</a>
+                       ·
+                       <a href="#">Blog</a>
+                       ·
+                       <a href="#">Pricing</a>
+                       ·
+                       <a href="#">About</a>
+                       ·
+                       <a href="#">Faq</a>
+                       ·
+                       <a href="#">Contact</a>
+                   </p>
+   
+                   <p class="footer-company-name">mahsa delfani</p>
+   
+           
+   
+               </div>
+   
+               <div class="footer-right">
+   
+                   <p>Contact Us</p>
+   
+                   <form action="#" method="post">
+   
+                       <input type="text" name="email" placeholder="Email">
+                       <textarea name="message" placeholder="Message"></textarea>
+                       <button>Send</button>
+   
+                   </form>
+   
+               </div>
+   
+           </footer>
+       
+
+</html>
